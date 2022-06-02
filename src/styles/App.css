@@ -1,0 +1,286 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+  font-family:'Futura TS'; ;
+  font-size: 24px;
+  text-decoration: none;
+  list-style-type: none;
+  padding-inline-start: 0;
+  color:black;
+}
+
+h3{
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+}
+
+a{
+  cursor: url(/public/img/Icons/Cursor_pointer.png), pointer;
+}
+
+
+
+.wrapper{
+  max-width: 1550px;
+  margin: 0 auto;
+}
+
+header{
+  margin: 40px 0 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_wrapper{
+  position: sticky;
+  top:0;
+  background-color: #fff;
+  z-index: 3;
+}
+
+.country_container{
+  width: 33%;
+}
+
+.country{
+  display: flex;
+  width: 105px;
+  height: 50px;
+  background-color: rgba(13, 13, 22, 1);
+  color: white;
+  text-align: center;
+}
+
+.coutry_text {
+  margin: auto 15px;
+  color: #fff;
+}
+
+.country img{
+  display: block;
+  margin: 5px;
+  color: white;
+}
+
+.logo{
+  width: 33%;
+}
+
+.logo img{
+  display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.header_menu{
+  width: 33%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.cart{
+  display: block;
+  min-height: 50px;
+  min-width: 50px;
+  margin-left: 14px;
+  background-color: rgba(13, 13, 22, 1);
+}
+
+.cart img{
+  display: block;
+  margin: 7px auto;
+}
+
+.account{
+  display: block;
+  min-height: 50px;
+  min-width: 50px;
+  margin-left: 14px;
+  background-color: rgba(13, 13, 22, 1);
+}
+
+.account img{
+  display: block;
+  margin: 7px auto;
+}
+
+.search{
+  display: block;
+  min-height: 50px;
+  min-width: 50px;
+  background-color: rgba(13, 13, 22, 1);
+}
+
+.search img{
+  display: block;
+  margin: 7px auto;
+}
+
+input {
+  width: 162px;
+  height: 50px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 1px solid rgba(13, 13, 22, 1);
+  outline: none;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out
+}
+
+input:focus{
+  color: #212529;
+  background-color: #fff;
+  outline: 0;
+  box-shadow:inset 0 0 0 0.2rem rgba(180, 48, 48, 0.25);
+}
+
+.hov_red:hover{
+  background-color: rgba(180, 48, 48, 1);
+}
+
+.run{
+  height: 776px;
+  background-image: url(/public/img/Head_image_2.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.image_store{
+  height: 33px;
+  background-image: url(/public/img/Icons/STORE.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.menu{
+  padding: 10px 0;
+  height: 50px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.menu a{
+  margin-right: 55px;
+  font-weight: 400;
+}
+
+.menu :last-child{
+  color: rgba(180, 48, 48, 1);
+  font-weight: 600;
+}
+
+.top_sale{
+  display: flex;
+  gap: 2px;
+}
+
+.top_sale_card{
+  max-width: 387px;
+  background-color: #F3F3F3;
+}
+
+.top_sale_card p{
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+}
+.top_sale_card :first-child{
+  padding-top: 53px;
+  padding-bottom: 20px;
+}
+
+.top_sale_card :last-child{
+  padding-top: 25px;
+  padding-bottom: 90px;
+}
+
+.top_sale_card img{
+  margin-top: 128px;
+  width: 100%;
+}
+
+.top_brands{
+  display: flex;
+  width: 100%;
+  margin: 10px 0;
+  flex-wrap: wrap;
+  gap:10px;
+}
+
+.brand_section{
+  width: 770px;
+  height: 700px;
+  text-align: center;
+  position: relative;
+}
+
+.brand_section img{
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%)
+}
+
+.brand_section:hover{
+  transform: scale(1.1);
+  z-index: 2;
+  transition: 1s;
+}
+
+.subscribe_block{
+  border-bottom: rgb(0, 0, 0) 1px solid;
+}
+
+.subscribe_block p{
+  font-size: 60px;
+  font-weight: 500;
+  padding-top: 200px;
+  padding-left: auto;
+  padding-bottom: 40px;
+}
+
+.subscribe_button{
+  display: flex;
+  height: 50px;
+  width: 300px;
+  background-color: rgb(0, 0, 0);
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 82px;
+}
+
+.subscribe_button span{
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: rgb(255, 255, 255);
+}
+
+.info_block{
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 28px;
+}
+
+.block_information h3{
+  margin-top: 22px;
+  margin-bottom: 14px;
+}
+
+.block_information li{
+  text-transform: capitalize;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  line-height: 2em;
+}
+
+.scroll_page{
+  position: relative;
+  z-index: 1;
+  background-color: rgb(255, 255, 255);
+}
+
+footer{
+  bottom: 0;
+  position: sticky;
+  z-index: 0;
+}
