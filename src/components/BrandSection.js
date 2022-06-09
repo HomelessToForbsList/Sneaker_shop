@@ -1,15 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function BrandSection(props) {
   return (
-    <div className="brand_section" style={{
+    <div className="brand_section">
+      <div className="brand_bg" style={{
       backgroundImage: `url(${props.bgImage})`,
       backgrounRepeat: "no-repeat",
-      backgroundSize: 'auto'
     }}>
-      <a href="#">
+      <Link to={props.url}>
         <img width={props.logoSize[0]} height={props.logoSize[1]} src={props.logo} alt='brandlogo'></img>
-      </a>
+      </Link>
+    </div>
     </div>
 
   )
