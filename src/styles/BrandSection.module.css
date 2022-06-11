@@ -1,0 +1,29 @@
+.brand_section{
+  flex: 1 1 auto;
+  width: 750px;
+  height: 700px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.brand_section img{
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.brand_bg{
+  height: 100%;
+  width: 100%;
+  transition: 1s;
+  background-size: cover;
+}
+
+.brand_section:hover .brand_bg, .brand_section:focus .brand_bg{
+  transform: scale(1.1);
+}
+
+.brand_section:hover .brand_bg:before{
+  display: block;
+}

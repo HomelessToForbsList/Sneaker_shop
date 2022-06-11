@@ -1,0 +1,26 @@
+.item{
+  position: relative;
+  height: 530px;
+  min-width: 384px;
+  flex: 1 1 auto;
+  z-index: 1;
+}
+.item_title{
+  padding-top: 76px;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 0.1em;
+}
+
+.item_color{
+  margin-top: 10px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.item_price{
+  margin-top: 320px;
+  text-align: center;
+  font-size: 24px;
+  letter-spacing: 0.1em;
+}

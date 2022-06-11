@@ -1,5 +1,6 @@
 import React from "react"
 import Card from "./Card"
+import styles from '../styles/BrandBlock.module.css'
 
 function Asicsbrand() {
 
@@ -14,24 +15,24 @@ function Asicsbrand() {
   AsicsItems.name = 'Asics'
 
   return (
-    <div className='brand_block'>
-      <div className="brand_title">
+    <div className={styles.brand_block}>
+      <div className={styles.brand_title}>
         <img src='/img/Asics_brandlogo.png' alt=""></img>
       </div>
-      <div className="item_list">
-      {AsicsItems.map(obj =>
-        <Card
-          key = {obj.title}
-          brand = {AsicsItems.name}
-          title={obj.title}
-          color={obj.color}
-          bgImage={obj.img[0]}
-          price={obj.price}
-          url = {obj.url}
-        />
-      )}
+      <div className={styles.item_list}>
+        {AsicsItems.map(obj =>
+          <Card
+            key={obj.title}
+            brand={AsicsItems.name}
+            title={obj.title}
+            color={obj.color}
+            bgImage={obj.img[0]}
+            price={obj.price}
+            url={obj.url}
+          />
+        )}
       </div>
-      <div className='brand_page_scroll'>
+      <div className={styles.brand_page_scroll}>
         1 of 1
       </div>
     </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import styles from '../styles/CardItem.module.css'
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
@@ -51,20 +52,20 @@ function CardItem() {
   return (
     <div>
       {BrandItem.map(obj =>
-        <div className="carditem_block" key={obj.url}>
-          <div className="carditem_img">
-            <div className="img_block" style={move}>{obj.img.map(url => <img src={url} alt='' key={url}></img>)}</div>
-            <div className="btn_next" onClick={onClickNext}><p></p></div>
-            <div className="btn_prev" onClick={onClickPrev}><p></p></div>
+        <div className={styles.carditem_block} key={obj.url}>
+          <div className={styles.carditem_img}>
+            <div className={styles.img_block} style={move}>{obj.img.map(url => <img src={url} alt='' key={url}></img>)}</div>
+            <div className={styles.btn_next} onClick={onClickNext}><p></p></div>
+            <div className={styles.btn_prev} onClick={onClickPrev}><p></p></div>
           </div>
-          <div className="carditem_content">
-            <div className="sneaker_title">{obj.title}</div>
-            <div className="sneaker_color">{obj.color}</div>
-            <div className="sneaker_description">Size:
+          <div className={styles.carditem_content}>
+            <div className={styles.sneaker_title}>{obj.title}</div>
+            <div className={styles.sneaker_color}>{obj.color}</div>
+            <div className={styles.sneaker_description}>Size:
               {obj.sizeAviable.map(value => <li key={value}>{value}</li>)}
             </div>
-            <div className="sneaker_price">{obj.price} EUR</div>
-            <div className="btn_Add" onClick={onAddToCart}>Add To Cart</div>
+            <div className={styles.sneaker_price}>{obj.price} EUR</div>
+            <div className={styles.btn_Add} onClick={onAddToCart}>Add To Cart</div>
           </div>
         </div>
       )}

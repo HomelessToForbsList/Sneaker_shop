@@ -1,5 +1,6 @@
 import React from "react"
 import Card from "./Card"
+import styles from '../styles/BrandBlock.module.css'
 
 function Nikebrand(props) {
 
@@ -14,11 +15,11 @@ function Nikebrand(props) {
   NikeItems.name = 'Nike'
 
   return (
-    <div className='brand_block'>
-      <div className="brand_title">
+    <div className={styles.brand_block}>
+      <div className={styles.brand_title}>
         <img src='/img/Nike_brandlogo.png' alt=""></img>
       </div>
-      <div className="item_list">
+      <div className={styles.item_list}>
         {NikeItems.map(obj =>
           <Card
             key={obj.url}
@@ -27,11 +28,11 @@ function Nikebrand(props) {
             color={obj.color}
             bgImage={obj.img[0]}
             price={obj.price}
-            url = {obj.url}
+            url={obj.url}
           />
         )}
       </div>
-      <div className='brand_page_scroll'>
+      <div className={styles.brand_page_scroll}>
         1 of 1
       </div>
     </div>

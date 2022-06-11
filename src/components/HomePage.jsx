@@ -1,4 +1,4 @@
-import '../styles/App.css'
+import styles from '../styles/HomePage.module.css'
 import TopSaleCard from './TopSaleCard.js'
 import TopSaleSneaker from './TopSaleSneaker.js'
 import TopBrands from "./TopBrands"
@@ -6,16 +6,16 @@ import BrandSection from './BrandSection';
 
 function HomePage() {
   return (
-    <div className='home_page'>
-      <div className='scroll_page'>
-      <div className='menu'>
+    <div className={styles.home_page}>
+      <div className={styles.scroll_page}>
+      <div className={styles.menu}>
         <a href='#'>Men</a>
         <a href='#'>Woman</a>
         <a href='#'>Kids</a>
         <a href='#'>Sale</a>
       </div>
-      <div className='run'></div>
-      <div className='top_sale'>
+      <div className={styles.run}></div>
+      <div className={styles.top_sale}>
         {
           TopSaleSneaker.map((obj) =>
             <TopSaleCard
@@ -27,7 +27,7 @@ function HomePage() {
             />)
         }
       </div>
-      <div className='top_brands'>
+      <div className={styles.top_brands}>
         {TopBrands.map((obj) =>
           <BrandSection
             key = {obj.url}
@@ -39,18 +39,18 @@ function HomePage() {
       </div>
     </div>
     <footer>
-    <div className='subscribe_block'>
+    <div className={styles.subscribe_block}>
       <p>
         Hey you! Don't forget to subscribe to our newsletter for the latest editorial articles, offers, and special releases!
       </p>
       <a href='#'>
-        <div className='subscribe_button hov_red'>
+        <div className={styles.subscribe_button}>
           <span>Sign Up for Newsletter</span>
         </div>
       </a>
     </div>
-    <div className='info_block'>
-      <div className='block_information'>
+    <div className={styles.info_block}>
+      <div className={styles.block_information}>
         <h3>INFORMATION</h3>
         <ul>
           <li><a href='#'>Sneaker Archive</a></li>
@@ -59,7 +59,7 @@ function HomePage() {
           <li><a href='#'>Terms of service</a></li>
         </ul>
       </div>
-      <div className='block_information'>
+      <div className={styles.block_information}>
         <h3>SERVICE</h3>
         <ul>
           <li><a href='#'>Help center / FAQ</a></li>
@@ -68,7 +68,7 @@ function HomePage() {
           <li><a href='#'>Cookie-Settings</a></li>
         </ul>
       </div>
-      <div className='block_information'>
+      <div className={styles.block_information}>
         <h3>CONTACT</h3>
         <ul>
           <li><a href='#'>Facebook</a></li>
@@ -77,7 +77,7 @@ function HomePage() {
           <li><a href='#'>Instagram</a></li>
         </ul>
       </div>
-      <div className='block_information'>
+      <div className={styles.block_information}>
         <h3>DELIVERY</h3>
         <ul>
           <li><a href='#'>Returning goods</a></li>

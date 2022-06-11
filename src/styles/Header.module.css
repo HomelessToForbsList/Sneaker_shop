@@ -1,0 +1,118 @@
+header{
+  margin: 40px 0 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_wrapper{
+  position: sticky;
+  top:0;
+  background-color: #fff;
+  z-index: 3;
+}
+
+.country_container{
+  width: 33%;
+}
+
+.country{
+  display: flex;
+  width: 105px;
+  height: 50px;
+  background-color: rgba(13, 13, 22, 1);
+  color: white;
+  text-align: center;
+}
+
+.coutry_text {
+  margin: auto 15px;
+  color: #fff;
+}
+
+.country img{
+  display: block;
+  margin: 5px;
+  color: white;
+}
+
+.logo{
+  width: 33%;
+}
+
+.logo img{
+  display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.header_menu{
+  width: 33%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.cart{
+  display: block;
+  min-height: 50px;
+  min-width: 50px;
+  margin-left: 14px;
+  background-color: rgba(13, 13, 22, 1);
+}
+
+.cart img{
+  display: block;
+  margin: 7px auto;
+}
+
+.account{
+  display: block;
+  min-height: 50px;
+  min-width: 50px;
+  margin-left: 14px;
+  background-color: rgba(13, 13, 22, 1);
+}
+
+.account img{
+  display: block;
+  margin: 7px auto;
+}
+
+.search{
+  display: block;
+  min-height: 50px;
+  min-width: 50px;
+  background-color: rgba(13, 13, 22, 1);
+}
+
+.search img{
+  display: block;
+  margin: 7px auto;
+}
+
+input {
+  width: 162px;
+  height: 50px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 1px solid rgba(13, 13, 22, 1);
+  outline: none;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out
+}
+
+input:focus{
+  color: #212529;
+  background-color: #fff;
+  outline: 0;
+  box-shadow:inset 0 0 0 0.2rem rgba(180, 48, 48, 0.25);
+}
+
+.image_store{
+  min-height: 33px;
+  background-image: url(/public/img/Icons/STORE.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.hov_red:hover{
+  background-color: rgba(180, 48, 48, 1);
+}
