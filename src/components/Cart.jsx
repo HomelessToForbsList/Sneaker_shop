@@ -16,6 +16,11 @@ function Cart() {
       .then((res) => { setCartItems(res.data) })
   }, [])
 
+  // React.useEffect(() => {
+  //     axios.get('https://629f5305461f8173e4e6f83a.mockapi.io/MyAccount')
+  //       .then((res) => { setCartItems(res.data.Cart) })
+  //   }, [])
+
   const Remove_item = (id) => {
     axios.delete(`https://629f5305461f8173e4e6f83a.mockapi.io/Cart/${id}`)
       .then(() => axios.get('https://629f5305461f8173e4e6f83a.mockapi.io/Cart')

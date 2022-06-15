@@ -6,39 +6,52 @@ import axios from "axios";
 
 
 
-function CardItem() {
+function CardItem(props) {
 
-  let { title } = useParams()
+  let { brand, title } = useParams()
 
   let [BrandItem, setBrandItem] = React.useState([])
-  let str = title.slice(0, title.indexOf('_'))
   let [pos, setPos] = React.useState(0)
   let [ArrImg, setArrImg] = React.useState([])
 
+  let itemTitle = title.split('_').join(' ').toLowerCase()
+  let item = props.items.filter(el => el.title === brand)[0].items.filter(el => el.title.toLowerCase() === itemTitle)
+
   React.useEffect(() => {
-    fetch(`https://6299d3147b866a90ec437a24.mockapi.io/${str}-sneakers/`)
-      .then((res) => { return res.json() })
-      .then((json) => { let snkr =json.filter((item) => item.url === title); setBrandItem(snkr) ;setArrImg(snkr[0].img) })
+    setBrandItem(item);
+    setArrImg(item[0].img)
   }, [])
 
   const move = {
     marginLeft: pos,
   }
   const onClickNext = () => {
-    setPos(pos-740)
-    if(pos < -(ArrImg.length-2)*740) {setPos(pos=0)}
+    setPos(pos - 740)
+    if (pos < -(ArrImg.length - 2) * 740) { setPos(pos = 0) }
   }
 
   const onClickPrev = () => {
-    setPos(pos+740)
-    if(pos >= 0) {setPos(pos=-(ArrImg.length-1)*740)}
+    setPos(pos + 740)
+    if (pos >= 0) { setPos(pos = -(ArrImg.length - 1) * 740) }
   }
 
   const onAddToCart = () => {
-      axios({
+
+    // axios.put('https://629f5305461f8173e4e6f83a.mockapi.io/MyAccount/1',{
+    //   new_cart:
+    //   {
+    //     title: BrandItem[0].title,
+    //     img: BrandItem[0].img,
+    //     price: BrandItem[0].price,
+    //     color: BrandItem[0].color,
+    //     size: BrandItem[0].sizeAviable,
+    //     url: BrandItem[0].url,
+    //       }
+    // })
+    axios({
       method: "POST",
       url: 'https://629f5305461f8173e4e6f83a.mockapi.io/Cart',
-      data: {
+      data:{
         title: BrandItem[0].title,
         img: BrandItem[0].img,
         price: BrandItem[0].price,

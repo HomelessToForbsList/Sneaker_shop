@@ -1,35 +1,59 @@
 import React from 'react';
-import { Route, Routes, Link } from 'react-router-dom';
+import { Route, Routes, } from 'react-router-dom';
 import './styles/App.css'
 import Header from './components/Header';
 import HomePage from './components/HomePage.jsx'
-import Asicsbrand from './components/Asicsbrand';
-import Adidasbrand from './components/Adidasbrand';
-import Pumabrand from './components/Pumabrand';
-import Nikebrand from './components/Nikebrand';
+import Brand from './components/Brand';
 import CardItem from './components/CardItem';
 import Cart from './components/Cart';
+import MyAccount from './components/MyAccount';
+import RegistrationForm from './components/RegistrationForm';
+import axios from 'axios';
+
+
 
 
 
 
 function App() {
 
-  return (
+  let [brandItems, setBrandItems] = React.useState([])
+
+  let [myAccount, setMyAccount] = React.useState({})
+
+  React.useEffect(() => {
+    axios.get('https://629f5305461f8173e4e6f83a.mockapi.io/MyAccount')
+      .then((res) => {
+        if (res.data.length > 0) setMyAccount(res.data[0])
+        else setMyAccount({})
+      })
+  },[])
+
+
+  React.useEffect(() => {
+    fetch('https://629f5305461f8173e4e6f83a.mockapi.io/BrandItems')
+      .then((res) => { return res.json() })
+      .then((json) => { setBrandItems(json) })
+  }, [])
+
+  if (brandItems.length === 0)
+    return (
+      <div className='loading'>
+        <img src='/img/loading.gif' alt='loading'></img>
+      </div>)
+  else return (
     <div className="App">
       <div className='wrapper' >
-        <Header />
+        <Header items={brandItems} />
         <Routes>
-          <Route path='/' element={<HomePage />} />
-          <Route path='/Asics' element={<Asicsbrand />}></Route>
-          <Route path='/Adidas' element={<Adidasbrand />}></Route>
-          <Route path='/Puma' element={<Pumabrand />}></Route>
-          <Route path='/Nike' element={<Nikebrand />}></Route>
-          <Route path='/Asics/:title' element={<CardItem />}></Route>
-          <Route path='/Puma/:title' element={<CardItem />}></Route>
-          <Route path='/Adidas/:title' element={<CardItem />}></Route>
-          <Route path='/Nike/:title' element={<CardItem />}></Route>
-          <Route path='/Cart' element={<Cart />}></Route>
+          <Route path='/' element={<HomePage items={brandItems} />} />
+          {brandItems.map(obj =>
+            <Route path={obj.url} element={<Brand item={obj} key={obj.title} />}></Route>
+          )}
+          <Route path='/:brand/:title' element={<CardItem items={brandItems} />}></Route>
+          <Route path='/Cart' element={<Cart myacc={myAccount.cart} />}></Route>
+          <Route path='/Account' element={<MyAccount myaccount={myAccount} />}></Route>
+          <Route path='/Registration' element={<RegistrationForm />}></Route>
         </Routes>
       </div>
     </div>

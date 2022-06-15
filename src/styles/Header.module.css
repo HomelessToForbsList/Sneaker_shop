@@ -87,10 +87,13 @@ header{
 .search img{
   display: block;
   margin: 7px auto;
+  cursor: url(/public/img/Icons/Cursor_pointer.png), pointer;
 }
 
 input {
-  width: 162px;
+  display: block;
+  margin: 10px auto;
+  width: 70%;
   height: 50px;
   padding: 12px 20px;
   box-sizing: border-box;
@@ -115,4 +118,31 @@ input:focus{
 
 .hov_red:hover{
   background-color: rgba(180, 48, 48, 1);
+}
+
+.search_block{
+  position: absolute;
+  background-color: rgb(226, 226, 226);
+  width: 100%;
+  min-height: 500px;
+  transition: 0.5s;
+}
+
+.search_content{
+  position: relative;
+  height: 100%;
+}
+
+.close_btn{
+  position: absolute;
+  top:0;
+  right: 5px;
+  cursor: url(/public/img/Icons/Cursor_pointer.png), pointer;
+  height: 50px;
+  width: 50px;
+  background-image: url(/public/img/Close_btn.svg);
+  background-repeat: no-repeat;
+}
+.link_to_item{
+  padding: 5px 0px 5px 10px;
 }

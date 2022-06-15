@@ -6,9 +6,15 @@
 
 .run{
   height: 776px;
-  background-image: url(/public/img/Head_image_2.jpg);
-  background-repeat: no-repeat;
-  background-size: 100%;
+  overflow: hidden;
+
+}
+.run_img{
+  width: 100%;
+  transition: 0.5s;
+}
+.run:hover .run_img, .run:focus .run_img{
+  transform: scale(1.1);
 }
 
 .image_store{

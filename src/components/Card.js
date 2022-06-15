@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Card(props) {
   return (
-    <Link to={`/${props.brand}/${props.url}`}>
+    <Link to={`${props.url}`}>
       <div className={styles.item} style={{
         backgroundImage: `url(${props.bgImage})`,
         backgrounRepeat: "no-repeat",

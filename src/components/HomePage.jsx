@@ -1,10 +1,9 @@
 import styles from '../styles/HomePage.module.css'
 import TopSaleCard from './TopSaleCard.js'
 import TopSaleSneaker from './TopSaleSneaker.js'
-import TopBrands from "./TopBrands"
 import BrandSection from './BrandSection';
 
-function HomePage() {
+function HomePage(props) {
   return (
     <div className={styles.home_page}>
       <div className={styles.scroll_page}>
@@ -14,7 +13,9 @@ function HomePage() {
         <a href='#'>Kids</a>
         <a href='#'>Sale</a>
       </div>
-      <div className={styles.run}></div>
+      <div className={styles.run}>
+        <img className={styles.run_img} src='/img/Head_image_2.jpg'></img>
+      </div>
       <div className={styles.top_sale}>
         {
           TopSaleSneaker.map((obj) =>
@@ -28,7 +29,7 @@ function HomePage() {
         }
       </div>
       <div className={styles.top_brands}>
-        {TopBrands.map((obj) =>
+        {props.items.map((obj) =>
           <BrandSection
             key = {obj.url}
             logo={obj.logo}
