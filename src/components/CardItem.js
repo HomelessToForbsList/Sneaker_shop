@@ -13,6 +13,7 @@ function CardItem(props) {
   let [BrandItem, setBrandItem] = React.useState([])
   let [pos, setPos] = React.useState(0)
   let [ArrImg, setArrImg] = React.useState([])
+  let [cart, setCart] = React.useState([])
 
   let itemTitle = title.split('_').join(' ').toLowerCase()
   let item = props.items.filter(el => el.title === brand)[0].items.filter(el => el.title.toLowerCase() === itemTitle)
@@ -37,30 +38,56 @@ function CardItem(props) {
 
   const onAddToCart = () => {
 
-    // axios.put('https://629f5305461f8173e4e6f83a.mockapi.io/MyAccount/1',{
-    //   new_cart:
-    //   {
-    //     title: BrandItem[0].title,
-    //     img: BrandItem[0].img,
-    //     price: BrandItem[0].price,
-    //     color: BrandItem[0].color,
-    //     size: BrandItem[0].sizeAviable,
-    //     url: BrandItem[0].url,
-    //       }
-    // })
-    axios({
-      method: "POST",
-      url: 'https://629f5305461f8173e4e6f83a.mockapi.io/Cart',
-      data:{
-        title: BrandItem[0].title,
-        img: BrandItem[0].img,
-        price: BrandItem[0].price,
-        color: BrandItem[0].color,
-        size: BrandItem[0].sizeAviable,
-        url: BrandItem[0].url,
+    axios.get('http://localhost:3001/MyAccount')
+      .then((res) => { return res.data[0].Cart.slice(0) })
+      .then((res) => {
+        setCart(cart = res.concat(
+          {
+            title: BrandItem[0].title,
+            img: BrandItem[0].img,
+            price: BrandItem[0].price,
+            color: BrandItem[0].color,
+            size: BrandItem[0].sizeAviable,
+            url: BrandItem[0].url,
+          }
+        ))
       }
-    })
+      )
+      .then((res) => {
+        axios({
+          method: 'PATCH',
+          url: 'http://localhost:3001/MyAccount/1',
+          data: {
+            Cart: cart
+          }
+        });
+      }
+      )
   }
+
+  // axios({
+  //   method: 'PATCH',
+  //   url: 'http://localhost:3001/MyAccount/1',
+  //   data: {
+  //     Cart: cart
+  //   }
+  // })
+
+
+  // axios({
+  //   method: "POST",
+  //   url: 'https://629f5305461f8173e4e6f83a.mockapi.io/Cart',
+  //   data:{
+  //     title: BrandItem[0].title,
+  //     img: BrandItem[0].img,
+  //     price: BrandItem[0].price,
+  //     color: BrandItem[0].color,
+  //     size: BrandItem[0].sizeAviable,
+  //     url: BrandItem[0].url,
+  //   }
+  // })
+  //}
+
 
   return (
     <div>

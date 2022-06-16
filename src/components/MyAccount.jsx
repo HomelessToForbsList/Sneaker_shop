@@ -7,7 +7,7 @@ function MyAccount(props){
   let id = props.myaccount.id
   const logOut = () => {
     console.log(id)
-    axios.delete(`https://629f5305461f8173e4e6f83a.mockapi.io/MyAccount/${id}`)
+    axios.delete(`http://localhost:3001/MyAccount/${id}`)
     .then (() => window.location.href="/")
   }
 
@@ -19,7 +19,6 @@ else  return(
       <div>First Name: {props.myaccount.Firstname}</div>
       <div>Last Name: {props.myaccount.Lastname}</div>
       <div>E-mail: {props.myaccount.Email}</div>
-      <div>Cart: {props.myaccount.Cart}</div>
       <div>Orders: {props.myaccount.Orders}</div>
       <button onClick={logOut}>LOGOUT</button>
     </div>

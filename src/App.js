@@ -22,19 +22,18 @@ function App() {
   let [myAccount, setMyAccount] = React.useState({})
 
   React.useEffect(() => {
-    axios.get('https://629f5305461f8173e4e6f83a.mockapi.io/MyAccount')
+    axios.get('http://localhost:3001/MyAccount')
       .then((res) => {
         if (res.data.length > 0) setMyAccount(res.data[0])
         else setMyAccount({})
       })
-  },[])
-
+  }, [])
 
   React.useEffect(() => {
-    fetch('https://629f5305461f8173e4e6f83a.mockapi.io/BrandItems')
-      .then((res) => { return res.json() })
-      .then((json) => { setBrandItems(json) })
+    axios.get('http://localhost:3001/ItemsList')
+      .then((res) => { setBrandItems(res.data) })
   }, [])
+
 
   if (brandItems.length === 0)
     return (
@@ -47,11 +46,11 @@ function App() {
         <Header items={brandItems} />
         <Routes>
           <Route path='/' element={<HomePage items={brandItems} />} />
-          {brandItems.map(obj =>
+          {brandItems.map((obj, index) =>
             <Route path={obj.url} element={<Brand item={obj} key={obj.title} />}></Route>
           )}
-          <Route path='/:brand/:title' element={<CardItem items={brandItems} />}></Route>
-          <Route path='/Cart' element={<Cart myacc={myAccount.cart} />}></Route>
+          <Route path='/:brand/:title' element={<CardItem items={brandItems} mycart={myAccount.Cart} />}></Route>
+          <Route path='/Cart' element={<Cart mycart={myAccount.Cart} />}></Route>
           <Route path='/Account' element={<MyAccount myaccount={myAccount} />}></Route>
           <Route path='/Registration' element={<RegistrationForm />}></Route>
         </Routes>

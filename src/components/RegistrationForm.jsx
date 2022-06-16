@@ -2,11 +2,11 @@ import styles from '../styles/RegistrationForm.module.css'
 import React from 'react'
 import { useEffect } from 'react'
 import axios from 'axios'
-import { useNavigate } from "react-router-dom";
+
 
 function RegistrationForm(props) {
 
-  let navigate = useNavigate()
+
 
   let [firstname, setFirstName] = React.useState('')
   let [lastname, setLastName] = React.useState('')
@@ -46,17 +46,28 @@ function RegistrationForm(props) {
     e.preventDefault();
     axios({
       method: "POST",
-      url: 'https://629f5305461f8173e4e6f83a.mockapi.io/Accounts',
+      url: 'http://localhost:3001/Accounts',
       data: {
         Firstname: firstname,
         Lastname: lastname,
         Email: email,
         Password: password,
         Orders: [],
-        Cart: [],
+        Cart: []
       }
     })
-    navigate('/')
+    axios({
+      method: "POST",
+      url: 'http://localhost:3001/MyAccount',
+      data: {
+        Firstname: firstname,
+        Lastname: lastname,
+        Email: email,
+        Password: password,
+        Orders: [],
+        Cart: []
+      }
+    })
   }
 
   return (
@@ -70,7 +81,7 @@ function RegistrationForm(props) {
           <input name='e-mail' type='text' placeholder='E-mail' value={email} onChange={(e) => addEmail(e)}></input>
           {passwordError && <div style={{ color: 'red', fontSize: 16, textAlign: 'center' }}>{passwordError}</div>}
           <input name='password' type='password' placeholder='Password' value={password} onChange={(e) => addPassword(e)}></input>
-          <button className={styles.btn} type='submit' disabled={!formValid}>Registration</button>
+          <button className={styles.btn} type='submit' disabled={!formValid} onClick={() => { window.location.href = "/" }}>Registration</button>
         </form>
       </div>
     </div>
