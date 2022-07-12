@@ -2,11 +2,17 @@ import styles from '../styles/RegistrationForm.module.css'
 import React from 'react'
 import { useEffect } from 'react'
 import axios from 'axios'
+import { useDispatch,useSelector } from 'react-redux'
+import {logIn} from '../store/accountSlice'
+import {error} from '../store/accountSlice'
+import ErrorPage from './ErrorPage'
 
 
-function RegistrationForm(props) {
+function RegistrationForm() {
 
+  const err = useSelector(state=>state.account.error)
 
+  const dispatch = useDispatch()
 
   let [firstname, setFirstName] = React.useState('')
   let [lastname, setLastName] = React.useState('')
@@ -46,32 +52,27 @@ function RegistrationForm(props) {
     e.preventDefault();
     axios({
       method: "POST",
-      url: 'http://localhost:3001/Accounts',
+      url: 'http://localhost:3002/registration',
       data: {
-        Firstname: firstname,
-        Lastname: lastname,
-        Email: email,
-        Password: password,
-        Orders: [],
-        Cart: []
+        firstname: firstname,
+        lastname: lastname,
+        email: email,
+        password: password,
+        cart:[],
+        orders:[]
       }
     })
-    axios({
-      method: "POST",
-      url: 'http://localhost:3001/MyAccount',
-      data: {
-        Firstname: firstname,
-        Lastname: lastname,
-        Email: email,
-        Password: password,
-        Orders: [],
-        Cart: []
-      }
+    .then(res=>{
+      if (!res.data.id){dispatch(error('Account has already been created'))}
+      else{dispatch(logIn(res.data))}
     })
   }
 
+
+
   return (
     <div className={styles.wrapper}>
+      {err && <ErrorPage info={err}/>}
       <div className={styles.form_block}>
         <form onSubmit={handleSubmit}>
           <h2>Create account</h2>
@@ -81,7 +82,7 @@ function RegistrationForm(props) {
           <input name='e-mail' type='text' placeholder='E-mail' value={email} onChange={(e) => addEmail(e)}></input>
           {passwordError && <div style={{ color: 'red', fontSize: 16, textAlign: 'center' }}>{passwordError}</div>}
           <input name='password' type='password' placeholder='Password' value={password} onChange={(e) => addPassword(e)}></input>
-          <button className={styles.btn} type='submit' disabled={!formValid} onClick={() => { window.location.href = "/" }}>Registration</button>
+          <button className={styles.btn} type='submit' disabled={!formValid}>Registration</button>
         </form>
       </div>
     </div>

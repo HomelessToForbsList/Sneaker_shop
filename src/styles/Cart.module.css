@@ -5,6 +5,8 @@
   min-height: 100%;
   padding: 30px;
   border: 2px solid black;
+  display: flex;
+  justify-content: space-between;
 }
 
 .empty_cart{
@@ -64,6 +66,12 @@
   padding-bottom: 5px;
 }
 
+.cart_content{
+  padding-top: 50px;
+  width: 30%;
+}
+
 .total{
   font-size: 30px;
+  font-weight: 600;
 }

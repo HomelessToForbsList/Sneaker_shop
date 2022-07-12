@@ -5,6 +5,8 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  justify-content: center;
+  align-items: center;
 }
 
 .brand_section img{
@@ -27,3 +29,5 @@
 .brand_section:hover .brand_bg:before{
   display: block;
 }
+
+

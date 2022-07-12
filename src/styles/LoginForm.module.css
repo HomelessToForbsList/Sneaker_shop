@@ -5,7 +5,7 @@
 .btn{
   display: block;
   margin: 0 auto;
-  width: 300px;
+  padding: 0 5vw;
   height: 50px;
   text-align: center;
   background-color: rgb(0, 0, 0);

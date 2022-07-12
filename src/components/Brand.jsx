@@ -1,20 +1,31 @@
 import React from "react"
 import styles from '../styles/BrandBlock.module.css'
 import Card from "./Card"
+import {useSelector,useDispatch } from 'react-redux'
+import { fetchBrandItems } from "../store/itemsSlice"
+import Loading from './Loading'
 
 function Brand(props){
 
+  const brandItems = useSelector(state => state.items.brandItems)
+
+  const dispatcher = useDispatch()
+
+  React.useEffect(()=>{
+    dispatcher(fetchBrandItems(props.item.title))
+  },[])
+  
   let url = `/img/${props.item.title}_brandlogo.png`
 
 
-
+  if (brandItems.status !== 'fulfield') { return <Loading /> }
   return(
     <div className={styles.brand_block}>
     <div className={styles.brand_title}>
       <img src={url} alt=""></img>
     </div>
     <div className={styles.item_list}>
-      {props.item.items.map(obj =>
+      {brandItems.list.map(obj =>
         <Card
           key={obj.url}
           brand={props.item.title}
@@ -23,6 +34,7 @@ function Brand(props){
           bgImage={obj.img[0]}
           price={obj.price}
           url={obj.url}
+          onsale={obj.onsale}
         />
       )}
     </div>

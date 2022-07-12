@@ -2,12 +2,18 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  gap: 2px;
+}
+
+.item_list a{
+  flex:1 1 auto;
+  max-width: 100%;
+  min-width:20%;
 }
 
 .brand_title{
   overflow: hidden;
 }
-
 
 .brand_page_scroll{
   margin-top: 1px;
@@ -15,4 +21,9 @@
   height: 85px;
   background-color: #F3F3F3;
   text-align: center;
+}
+@media (max-width:800px) {
+  .item_list a{
+    min-width:40%;
+  }
 }

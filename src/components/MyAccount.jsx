@@ -1,26 +1,24 @@
 import styles from '../styles/MyAccount.module.css'
 import LoginForm from './LoginForm'
-import axios from 'axios'
+import {useSelector,useDispatch } from 'react-redux'
+import { logOut } from '../store/accountSlice'
 
-function MyAccount(props){
+function MyAccount(){
 
-  let id = props.myaccount.id
-  const logOut = () => {
-    console.log(id)
-    axios.delete(`http://localhost:3001/MyAccount/${id}`)
-    .then (() => window.location.href="/")
-  }
+  const myAccount = useSelector((state) => state.account.myAccount)
+  const dispatch = useDispatch ()
 
+  const Out = () => {dispatch(logOut())}
 
-if(!props.myaccount.Email) return <LoginForm myaccount={props.myaccount}/>
+if(!myAccount.email) return <LoginForm myaccount={myAccount}/>
 
 else  return(
     <div className={styles.wrapper}>
-      <div>First Name: {props.myaccount.Firstname}</div>
-      <div>Last Name: {props.myaccount.Lastname}</div>
-      <div>E-mail: {props.myaccount.Email}</div>
-      <div>Orders: {props.myaccount.Orders}</div>
-      <button onClick={logOut}>LOGOUT</button>
+      <div>First Name: {myAccount.firstname}</div>
+      <div>Last Name: {myAccount.lastname}</div>
+      <div>E-mail: {myAccount.email}</div>
+      <div>Orders: {myAccount.orders}</div>
+      <button className={styles.btn} onClick={Out}>LOGOUT</button>
     </div>
   )
 }

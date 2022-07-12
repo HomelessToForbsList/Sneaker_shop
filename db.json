@@ -12,10 +12,14 @@
       "items": [
         {
           "title": "Puma Blaze of Glory",
-          "gender": "man",
+          "gender": "men",
           "url": "/Puma/Puma_Blaze_Of_Glory",
           "color": "dark",
           "price": 90,
+          "onsale": {
+            "discount": "50%",
+            "salePrice": 45
+          },
           "img": [
             "/img/Puma_card/Puma_Blaze_of_Glory/Puma_Blaze_of_Glory_dark_1.jpg",
             "/img/Puma_card/Puma_Blaze_of_Glory/Puma_Blaze_of_Glory_dark_2.jpg",
@@ -31,10 +35,11 @@
         },
         {
           "title": "Puma Kosmo Rider",
-          "gender": "woman",
+          "gender": "women",
           "url": "/Puma/Puma_Kosmo_Rider",
           "color": "white",
           "price": 100,
+          "onsale": false,
           "img": [
             "/img/Puma_card/Puma_KosmoRider/Puma_KosmoRider_white_1.jpg",
             "/img/Puma_card/Puma_KosmoRider/Puma_KosmoRider_white_2.jpg",
@@ -50,10 +55,11 @@
         },
         {
           "title": "Puma Rs Connect",
-          "gender": "man",
+          "gender": "men",
           "url": "/Puma/Puma_RS_Connect",
           "color": "gray",
           "price": 150,
+          "onsale": false,
           "img": [
             "/img/Puma_card/Puma_RS-Connect/Puma_RS-Connect_gray_1.jpg",
             "/img/Puma_card/Puma_RS-Connect/Puma_RS-Connect_gray_2.jpg",
@@ -69,10 +75,11 @@
         },
         {
           "title": "Puma RS-X",
-          "gender": "woman",
+          "gender": "women",
           "url": "/Puma/Puma_RS-X",
           "color": "white",
           "price": 130,
+          "onsale": false,
           "img": [
             "/img/Puma_card/Puma_RSx/Puma_RSx_white_1.jpg",
             "/img/Puma_card/Puma_RSx/Puma_RSx_white_2.jpg",
@@ -100,10 +107,11 @@
       "items": [
         {
           "title": "Adidas Ori-Orcetro",
-          "gender": "man",
+          "gender": "men",
           "url": "/Adidas/Adidas_Ori-Orcetro",
           "color": "cbrown",
           "price": 110,
+          "onsale": false,
           "img": [
             "/img/Adidas_card/Adidas_Ori/Adidas_Ori_Orketro_cbrown_1.jpg",
             "/img/Adidas_card/Adidas_Ori/Adidas_Ori_Orketro_cbrown_2.jpg",
@@ -119,10 +127,11 @@
         },
         {
           "title": "Adidas Supernova",
-          "gender": "woman",
+          "gender": "women",
           "url": "/Adidas/Adidas_Supernova",
           "color": "purple",
           "price": 100,
+          "onsale": false,
           "img": [
             "/img/Adidas_card/Adidas_Supernova/Adidas_Supernova_purple_1.jpg",
             "/img/Adidas_card/Adidas_Supernova/Adidas_Supernova_purple_2.jpg",
@@ -138,10 +147,11 @@
         },
         {
           "title": "Adidas New Wings",
-          "gender": "man",
+          "gender": "men",
           "url": "/Adidas/Adidas_New_Wings",
           "color": "white",
           "price": 150,
+          "onsale": false,
           "img": [
             "/img/Adidas_card/Adidas_NewWings/Adidas_newWings_white_1.jpg",
             "/img/Adidas_card/Adidas_NewWings/Adidas_newWings_white_2.jpg",
@@ -156,11 +166,95 @@
           ]
         },
         {
+          "title": "Adidas Originals ASTIR",
+          "gender": "women",
+          "url": "/Adidas/Adidas_Originals_ASTIR",
+          "color": "cream",
+          "price": 122,
+          "onsale": false,
+          "img": [
+            "/img/Adidas_card/Adidas_Originals_ASTIR/Adidas_Originals_ASTIR_1.jpg",
+            "/img/Adidas_card/Adidas_Originals_ASTIR/Adidas_Originals_ASTIR_2.jpg",
+            "/img/Adidas_card/Adidas_Originals_ASTIR/Adidas_Originals_ASTIR_3.jpg",
+            "/img/Adidas_card/Adidas_Originals_ASTIR/Adidas_Originals_ASTIR_4.jpg"
+          ],
+          "sizeAviable": [
+            38,
+            39,
+            40,
+            41
+          ]
+        },
+        {
+          "title": "Adidas Consortium",
+          "gender": "men",
+          "url": "/Adidas/Adidas_Consortium",
+          "color": "onyx",
+          "price": 180,
+          "onsale": {
+            "discount": "30%",
+            "salePrice": 120
+          },
+          "img": [
+            "/img/Adidas_card/Adidas_Consortium/Adidas_Consortium_black_1.jpg",
+            "/img/Adidas_card/Adidas_Consortium/Adidas_Consortium_black_2.jpg",
+            "/img/Adidas_card/Adidas_Consortium/Adidas_Consortium_black_3.jpg",
+            "/img/Adidas_card/Adidas_Consortium/Adidas_Consortium_black_4.jpg"
+          ],
+          "sizeAviable": [
+            40,
+            42,
+            44,
+            45
+          ]
+        },
+        {
+          "title": "Adidas ZX 8000 Kawasaki",
+          "gender": "kids",
+          "url": "/Adidas/Adidas_ZX_8000_Kawasaki",
+          "color": "green",
+          "price": 120,
+          "onsale": false,
+          "img": [
+            "/img/Adidas_card/Adidas_ZX_8000_Kawasaki/Adidas_ZX_8000_Kawasaki_green_1.jpg",
+            "/img/Adidas_card/Adidas_ZX_8000_Kawasaki/Adidas_ZX_8000_Kawasaki_green_2.jpg",
+            "/img/Adidas_card/Adidas_ZX_8000_Kawasaki/Adidas_ZX_8000_Kawasaki_green_3.jpg",
+            "/img/Adidas_card/Adidas_ZX_8000_Kawasaki/Adidas_ZX_8000_Kawasaki_green_4.jpg"
+          ],
+          "sizeAviable": [
+            35,
+            36,
+            38,
+            39
+          ]
+        },
+        {
+          "title": "Adidas Stan Smith",
+          "gender": "kids",
+          "url": "/Adidas/Adidas_Stan_Smith",
+          "color": "green",
+          "price": 100,
+          "onsale": false,
+          "img": [
+            "/img/Adidas_card/Adidas_Stan_Smith/Adidas_Stan_Smith_green_1.jpg",
+            "/img/Adidas_card/Adidas_Stan_Smith/Adidas_Stan_Smith_green_2.jpg",
+            "/img/Adidas_card/Adidas_Stan_Smith/Adidas_Stan_Smith_green_3.jpg",
+            "/img/Adidas_card/Adidas_Stan_Smith/Adidas_Stan_Smith_green_4.jpg"
+          ],
+          "sizeAviable": [
+            35,
+            36,
+            38,
+            39
+          ]
+        },
+        {
           "title": "Adidas Forum Low",
-          "gender": "woman",
+          "gender": "women",
           "url": "/Adidas/Adidas_Forum_Low",
           "color": "white",
           "price": 130,
+          "onsale": false,
           "img": [
             "/img/Adidas_card/Adidas_Forum/Adidas_Forum_white_1.jpg",
             "/img/Adidas_card/Adidas_Forum/Adidas_Forum_white_2.jpg",
@@ -188,10 +282,11 @@
       "items": [
         {
           "title": "Asics Gel 1090",
-          "gender": "woman",
+          "gender": "women",
           "url": "/Asics/Asics_Gel_1090",
           "color": "white",
           "price": 135,
+          "onsale": false,
           "img": [
             "/img/Asics_card/Asics_Gel_1090/Asics_Gel_1090_white_1.jpg",
             "/img/Asics_card/Asics_Gel_1090/Asics_Gel_1090_white_2.jpg",
@@ -207,10 +302,11 @@
         },
         {
           "title": "Asics Gel 1130",
-          "gender": "man",
+          "gender": "men",
           "url": "/Asics/Asics_Gel_1130",
           "color": "smoke grey",
           "price": 160,
+          "onsale": false,
           "img": [
             "/img/Asics_card/Asics_Gel_1130/Asics_Gel_1130_smoke_grey_1.jpg",
             "/img/Asics_card/Asics_Gel_1130/Asics_Gel_1130_smoke_grey_2.jpg",
@@ -226,10 +322,11 @@
         },
         {
           "title": "Asics Gel Nandi",
-          "gender": "man",
+          "gender": "men",
           "url": "/Asics/Asics_Gel_Nandi",
           "color": "rock",
           "price": 150,
+          "onsale": false,
           "img": [
             "/img/Asics_card/Asics_Gel_Nandi/Asics_Gel_Nandi_rock_1.jpg",
             "/img/Asics_card/Asics_Gel_Nandi/Asics_Gel_Nandi_rock_2.jpg",
@@ -245,10 +342,14 @@
         },
         {
           "title": "Asics x Luisaviaroma Gel Kyrios",
-          "gender": "woman",
+          "gender": "women",
           "url": "/Asics/Asics_x_Luisaviaroma_Gel_Kyrios",
           "color": "baltic",
           "price": 190,
+          "onsale": {
+            "discount": "25%",
+            "salePrice": 142.5
+          },
           "img": [
             "/img/Asics_card/Asiscs_x_Luisaviaroma_Gel_Kyrios/Asics_x_Luisaviaroma_Gel_Kyrios_Baltic_1.jpg",
             "/img/Asics_card/Asiscs_x_Luisaviaroma_Gel_Kyrios/Asics_x_Luisaviaroma_Gel_Kyrios_Baltic_2.jpg",
@@ -260,6 +361,85 @@
             39,
             41,
             43
+          ]
+        },
+        {
+          "title": "Asics FN3 Gel Kayano 28",
+          "gender": "women",
+          "url": "/Asics/Asics FN3 Gel Kayano 28",
+          "color": "green",
+          "price": 130,
+          "onsale": false,
+          "img": [
+            "/img/Asics_card/Asics_FN3_Gel_Kayano_28/Asics_FN3_Gel_Kayano_28_green_1.jpg",
+            "/img/Asics_card/Asics_FN3_Gel_Kayano_28/Asics_FN3_Gel_Kayano_28_green_2.jpg",
+            "/img/Asics_card/Asics_FN3_Gel_Kayano_28/Asics_FN3_Gel_Kayano_28_green_3.jpg",
+            "/img/Asics_card/Asics_FN3_Gel_Kayano_28/Asics_FN3_Gel_Kayano_28_green_4.jpg"
+          ],
+          "sizeAviable": [
+            38,
+            39,
+            40,
+            41
+          ]
+        },
+        {
+          "title": "Asics Gel 1090v2",
+          "gender": "women",
+          "url": "/Asics/Asics Gel 1090v2",
+          "color": "grey",
+          "price": 115,
+          "onsale": false,
+          "img": [
+            "/img/Asics_card/Asics_Gel_1090v2/Asics_Gel_1090v2_grey_1.jpg",
+            "/img/Asics_card/Asics_Gel_1090v2/Asics_Gel_1090v2_grey_2.jpg",
+            "/img/Asics_card/Asics_Gel_1090v2/Asics_Gel_1090v2_grey_3.jpg"
+          ],
+          "sizeAviable": [
+            38,
+            39,
+            40,
+            41
+          ]
+        },
+        {
+          "title": "Asics Gel Nimbus 9",
+          "gender": "kids",
+          "url": "/Asics/Asics Gel Nimbus 9",
+          "color": "aqua",
+          "price": 125,
+          "onsale": false,
+          "img": [
+            "/img/Asics_card/Asics_Gel_Nimbus_9/Asics_Gel_Nimbus_9_aqua_1.jpg",
+            "/img/Asics_card/Asics_Gel_Nimbus_9/Asics_Gel_Nimbus_9_aqua_2.jpg",
+            "/img/Asics_card/Asics_Gel_Nimbus_9/Asics_Gel_Nimbus_9_aqua_3.jpg",
+            "/img/Asics_card/Asics_Gel_Nimbus_9/Asics_Gel_Nimbus_9_aqua_4.jpg"
+          ],
+          "sizeAviable": [
+            36,
+            37,
+            38,
+            39
+          ]
+        },
+        {
+          "title": "Asics Gel Preleus",
+          "gender": "kids",
+          "url": "/Asics/Asics Gel Preleus",
+          "color": "grey",
+          "price": 105,
+          "onsale": false,
+          "img": [
+            "/img/Asics_card/Asics_Gel_Preleus/Asics_Gel_Preleus_grey_1.jpg",
+            "/img/Asics_card/Asics_Gel_Preleus/Asics_Gel_Preleus_grey_2.jpg",
+            "/img/Asics_card/Asics_Gel_Preleus/Asics_Gel_Preleus_grey_3.jpg",
+            "/img/Asics_card/Asics_Gel_Preleus/Asics_Gel_Preleus_grey_4.jpg"
+          ],
+          "sizeAviable": [
+            36,
+            37,
+            38,
+            39
           ]
         }
       ]
@@ -276,10 +456,11 @@
       "items": [
         {
           "title": "Nike ACG",
-          "gender": "woman",
+          "gender": "women",
           "url": "/Nike/Nike_ACG",
           "color": "black",
           "price": 110,
+          "onsale": false,
           "img": [
             "/img/Nike_card/Nike_ACG/Nike_ACG_black_1.jpg",
             "/img/Nike_card/Nike_ACG/Nike_ACG_black_2.jpg",
@@ -295,10 +476,11 @@
         },
         {
           "title": "Nike Air Force 1",
-          "gender": "man",
+          "gender": "men",
           "url": "/Nike/Nike_Air_Force_1",
           "color": "sail",
           "price": 100,
+          "onsale": false,
           "img": [
             "/img/Nike_card/Nike_AF1/Nike_AF1_sail_1.jpg",
             "/img/Nike_card/Nike_AF1/Nike_AF1_sail_2.jpg",
@@ -314,10 +496,11 @@
         },
         {
           "title": "Nike Air Max Plus",
-          "gender": "man",
+          "gender": "men",
           "url": "/Nike/Nike_Air_Max_Plus",
           "color": "white",
           "price": 180,
+          "onsale": false,
           "img": [
             "/img/Nike_card/Nike_AirMaxPlus/Nike_AirMaxPlus_white_1.jpg",
             "/img/Nike_card/Nike_AirMaxPlus/Nike_AirMaxPlus_white_2.jpg"
@@ -331,10 +514,11 @@
         },
         {
           "title": "Nike Huarache",
-          "gender": "woman",
+          "gender": "women",
           "url": "/Nike/Nike_Huarache",
           "color": "sail",
           "price": 130,
+          "onsale": false,
           "img": [
             "/img/Nike_card/Nike_Huarache/Nike_Huarache_sail_1.jpg",
             "/img/Nike_card/Nike_Huarache/Nike_Huarache_sail_2.jpg",
@@ -346,6 +530,89 @@
             39,
             41,
             43
+          ]
+        },
+        {
+          "title": "Nike Air Max 96 QS",
+          "gender": "women",
+          "url": "/Nike/Nike_Air_Max_96_QS",
+          "color": "grey",
+          "price": 115,
+          "onsale": {
+            "discount": "40%",
+            "salePrice": 69
+          },
+          "img": [
+            "/img/Nike_card/Nike_Air_Max_96_QS/Nike_Air_Max_96_QS_grey_1.jpg",
+            "/img/Nike_card/Nike_Air_Max_96_QS/Nike_Air_Max_96_QS_grey_2.jpg",
+            "/img/Nike_card/Nike_Air_Max_96_QS/Nike_Air_Max_96_QS_grey_3.jpg",
+            "/img/Nike_card/Nike_Air_Max_96_QS/Nike_Air_Max_96_QS_grey_4.jpg"
+          ],
+          "sizeAviable": [
+            38,
+            39,
+            41,
+            43
+          ]
+        },
+        {
+          "title": "Nike ACG Air Mowabb",
+          "gender": "men",
+          "url": "/Nike/Nike_ACG_Air_Mowabb",
+          "color": "violet",
+          "price": 140,
+          "onsale": false,
+          "img": [
+            "/img/Nike_card/Nike_ACG_Air_Mowabb/Nike_ACG_Air_Mowabb_violet_1.jpg",
+            "/img/Nike_card/Nike_ACG_Air_Mowabb/Nike_ACG_Air_Mowabb_violet_2.jpg",
+            "/img/Nike_card/Nike_ACG_Air_Mowabb/Nike_ACG_Air_Mowabb_violet_3.jpg",
+            "/img/Nike_card/Nike_ACG_Air_Mowabb/Nike_ACG_Air_Mowabb_violet_4.jpg"
+          ],
+          "sizeAviable": [
+            40,
+            42,
+            41,
+            43
+          ]
+        },
+        {
+          "title": "Nike Air Max 90 NRG",
+          "gender": "kids",
+          "url": "/Nike/Nike_Air_Max_90_NRG",
+          "color": "multi",
+          "price": 90,
+          "onsale": false,
+          "img": [
+            "/img/Nike_card/Nike_Air_Max_90_NRG/Nike_Air_Max_90_NRG_multi_1.jpg",
+            "/img/Nike_card/Nike_Air_Max_90_NRG/Nike_Air_Max_90_NRG_multi_2.jpg",
+            "/img/Nike_card/Nike_Air_Max_90_NRG/Nike_Air_Max_90_NRG_multi_3.jpg",
+            "/img/Nike_card/Nike_Air_Max_90_NRG/Nike_Air_Max_90_NRG_multi_4.jpg"
+          ],
+          "sizeAviable": [
+            40,
+            42,
+            41,
+            43
+          ]
+        },
+        {
+          "title": "Nike Air Trainer 1",
+          "gender": "kids",
+          "url": "/Nike/Nike_Air_Trainer_1",
+          "color": "violet",
+          "price": 95,
+          "onsale": false,
+          "img": [
+            "/img/Nike_card/Nike_Air_Trainer_1/Nike_Air_Trainer_1_smoke_1.jpg",
+            "/img/Nike_card/Nike_Air_Trainer_1/Nike_Air_Trainer_1_smoke_2.jpg",
+            "/img/Nike_card/Nike_Air_Trainer_1/Nike_Air_Trainer_1_smoke_3.jpg",
+            "/img/Nike_card/Nike_Air_Trainer_1/Nike_Air_Trainer_1_smoke_4.jpg"
+          ],
+          "sizeAviable": [
+            37,
+            38,
+            39,
+            40
           ]
         }
       ]
@@ -373,13 +640,12 @@
   ],
   "MyAccount": [
     {
-      "Firstname": "Mr",
-      "Lastname": "White",
-      "Email": "taras.frbslist@gmail.com",
-      "Password": "1234",
-      "Orders": [],
-      "Cart": [],
+      "email": "k.stepanova1664@gmail.com",
       "id": 1
+    },
+    {
+      "email": "k.stepanova1664@gmail.com",
+      "id": 2
     }
   ]
 }

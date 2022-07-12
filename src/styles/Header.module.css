@@ -1,8 +1,11 @@
 header{
-  margin: 40px 0 0 0;
+  min-width: 100%;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  padding-top: 40px;
 }
 
 .header_wrapper{
@@ -13,12 +16,11 @@ header{
 }
 
 .country_container{
-  width: 33%;
+  margin-left: 0;
 }
 
 .country{
   display: flex;
-  width: 105px;
   height: 50px;
   background-color: rgba(13, 13, 22, 1);
   color: white;
@@ -28,6 +30,7 @@ header{
 .coutry_text {
   margin: auto 15px;
   color: #fff;
+  width: 103px;
 }
 
 .country img{
@@ -36,22 +39,20 @@ header{
   color: white;
 }
 
-.logo{
-  width: 33%;
-}
-
 .logo img{
   display: block;
-    margin-left: auto;
-    margin-right: auto
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 
 .header_menu{
-  width: 33%;
   display: flex;
   flex-direction: row-reverse;
+  margin-right: 0;
 }
 .cart{
+  position: relative;
   display: block;
   min-height: 50px;
   min-width: 50px;
@@ -64,12 +65,49 @@ header{
   margin: 7px auto;
 }
 
+.cartcounter{
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  height: 28px;
+  width: 28px;
+  border-radius: 15px;
+  background-color: rgba(180, 48, 48, 1);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cartcounter p{
+  color: #fff;
+  font-size: 15px;
+}
+
+
+
 .account{
+  position: relative;
   display: block;
   min-height: 50px;
   min-width: 50px;
   margin-left: 14px;
   background-color: rgba(13, 13, 22, 1);
+}
+
+.login{
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+  background-image: url(/public/img/LoggedIn.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .account img{
@@ -110,39 +148,27 @@ input:focus{
 }
 
 .image_store{
-  min-height: 33px;
-  background-image: url(/public/img/Icons/STORE.svg);
-  background-repeat: no-repeat;
-  background-size: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
 }
+
 
 .hov_red:hover{
   background-color: rgba(180, 48, 48, 1);
 }
 
-.search_block{
-  position: absolute;
-  background-color: rgb(226, 226, 226);
-  width: 100%;
-  min-height: 500px;
-  transition: 0.5s;
-}
 
-.search_content{
-  position: relative;
-  height: 100%;
-}
-
-.close_btn{
-  position: absolute;
-  top:0;
-  right: 5px;
-  cursor: url(/public/img/Icons/Cursor_pointer.png), pointer;
-  height: 50px;
-  width: 50px;
-  background-image: url(/public/img/Close_btn.svg);
-  background-repeat: no-repeat;
-}
-.link_to_item{
-  padding: 5px 0px 5px 10px;
+@media (max-width: 770px) {
+  .logo{
+    width: 100%;
+    order:1;
+  }
+  .coutry_text {
+    width: 40px;
+    margin:auto;
+  }
+  .header_menu{
+    margin: 0;
+  }
 }

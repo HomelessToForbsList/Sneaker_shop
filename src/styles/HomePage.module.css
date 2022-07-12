@@ -5,9 +5,7 @@
 }
 
 .run{
-  height: 776px;
   overflow: hidden;
-
 }
 .run_img{
   width: 100%;
@@ -39,11 +37,18 @@
 .menu :last-child{
   color: rgba(180, 48, 48, 1);
   font-weight: 600;
+  margin-right: 0;
 }
 
 .top_sale{
   display: flex;
   gap: 2px;
+  flex-wrap: wrap;
+}
+.top_sale a{
+  flex:1 1 auto;
+  max-width: 100%;
+  min-width:20%;
 }
 
 
@@ -60,6 +65,7 @@ footer{
   bottom: 0;
   position: sticky;
   z-index: 0;
+  min-height: 100%;
 }
 
 .subscribe_block{
@@ -67,7 +73,7 @@ footer{
 }
 
 .subscribe_block p{
-  font-size: 60px;
+  font-size: 4vw;
   font-weight: 500;
   padding-top: 200px;
   padding-left: auto;
@@ -93,6 +99,8 @@ footer{
 
 .info_block{
   display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
   justify-content: space-around;
   padding-bottom: 28px;
 }
@@ -111,4 +119,25 @@ footer{
 
 .block_information ul li a{
   font-size: 15px;
+}
+
+@media (max-width:770px) {
+  .menu a{
+    font-size: 4vw;
+  }
+  .block_information{
+    min-width: 50%;
+  }
+  .top_sale a{
+    min-width:40%;
+  }
+  .subscribe_block p{
+    font-size: 6vw;
+  }
+}
+
+@media (max-width:1550px) {
+  .top_sale a{
+    min-width:40%;
+  }
 }

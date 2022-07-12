@@ -1,0 +1,28 @@
+.search_block{
+  position: absolute;
+  background-color: rgb(226, 226, 226);
+  width: calc(100% - 30px);
+  min-height: 500px;
+  transition: 0.5s;
+  z-index:100;
+}
+
+.search_content{
+  position: relative;
+  height: 100%;
+}
+
+.close_btn{
+  position: absolute;
+  top:0;
+  right: 5px;
+  cursor: url(/public/img/Icons/Cursor_pointer.png), pointer;
+  height: 50px;
+  width: 50px;
+  background-image: url(/public/img/Close_btn.svg);
+  background-repeat: no-repeat;
+  z-index: 101;
+}
+.link_to_item{
+  padding: 5px 0px 5px 10px;
+}

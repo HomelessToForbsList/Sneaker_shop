@@ -1,19 +1,15 @@
 import styles from '../styles/LoginForm.module.css'
 import React from 'react'
 import { Link } from 'react-router-dom'
-import axios from 'axios';
+import { useDispatch } from 'react-redux'
+import { getMyAccount } from '../store/accountSlice'
+import { useNavigate } from "react-router-dom";
 
 
-function LoginForm(props) {
+function LoginForm() {
+  let navigate = useNavigate();
 
-  let [accounts, setAccounts] = React.useState([])
-  let [temp, setTemp] = React.useState({})
-
-  React.useEffect(() => {
-    axios.get('http://localhost:3001/Accounts')
-      //.then((res) => { return res.json() })
-      .then((res) => { setAccounts(res.data) })
-  }, [])
+  const dispatch = useDispatch()
 
   let [email, setEmail] = React.useState('')
   let [password, setPassword] = React.useState('')
@@ -39,25 +35,10 @@ function LoginForm(props) {
     else setFormValid(true)
   }, [passwordError, emailError])
 
-  const handleLogin = (e) => {
+  const handleLogin = (e)=>{
     e.preventDefault();
-    let acc = accounts.filter(el => el.Email === email)[0]
-    if (acc.Password === password) {
-      setTemp(temp = acc)
-      axios({
-        method: "POST",
-        url: 'http://localhost:3001/MyAccount',
-        data: {
-          Firstname: temp.Firstname,
-          Lastname: temp.Lastname,
-          Email: temp.Email,
-          Password: temp.Password,
-          Orders: temp.Orders,
-          Cart: temp.Cart
-        }
-      })
-    }
-    else alert('Wrong password or email')
+    dispatch(getMyAccount({ email: email, password: password }))
+    navigate("../", { replace: true })
   }
 
 
@@ -70,7 +51,7 @@ function LoginForm(props) {
           <input name='e-mail' type='text' placeholder='E-mail' value={email} onChange={(e) => addEmail(e)}></input>
           {passwordError && <div style={{ color: 'red', fontSize: 16, textAlign: 'center' }}>{passwordError}</div>}
           <input name='password' type='password' placeholder='Password' value={password} onChange={(e) => addPassword(e)}></input>
-          <button className={styles.btn} type='submit' disabled={!formValid} onClick={() => { window.location.href = "/" }}>Log in</button>
+          <button className={styles.btn} type='submit' disabled={!formValid} >Log in</button>
           <Link to='/Registration'><div className={styles.link}>create new account</div></Link>
         </form>
       </div>

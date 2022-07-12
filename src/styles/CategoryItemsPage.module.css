@@ -1,0 +1,18 @@
+.content{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2px;
+}
+
+.content a{
+  flex:1 1 auto;
+  max-width: 100%;
+  min-width:20%;
+}
+
+@media (max-width:800px) {
+  .content a{
+    min-width:40%;
+  }
+}

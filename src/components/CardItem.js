@@ -1,117 +1,102 @@
 import React from "react";
 import styles from '../styles/CardItem.module.css'
 import { useParams } from "react-router-dom";
-import axios from "axios";
+import { useSelector, useDispatch } from 'react-redux'
+import { fetchItem } from '../store/itemsSlice'
+import { addToCart, error } from '../store/accountSlice'
+
+import Loading from "./Loading";
+import ErrorPage from "./ErrorPage";
 
 
 
 
-function CardItem(props) {
+
+function CardItem() {
+
+  const dispatcher = useDispatch()
 
   let { brand, title } = useParams()
+  let itemTitle = title.split('_').join(' ')
 
-  let [BrandItem, setBrandItem] = React.useState([])
-  let [pos, setPos] = React.useState(0)
-  let [ArrImg, setArrImg] = React.useState([])
-  let [cart, setCart] = React.useState([])
-
-  let itemTitle = title.split('_').join(' ').toLowerCase()
-  let item = props.items.filter(el => el.title === brand)[0].items.filter(el => el.title.toLowerCase() === itemTitle)
+  const selecteditem = useSelector(state => state.items.selectedItem)
+  const id = useSelector(state => state.account.myAccount._id)
+  const isLoggedIn = useSelector(state => state.account.status)
+  const err = useSelector(state=>state.account.error)
 
   React.useEffect(() => {
-    setBrandItem(item);
-    setArrImg(item[0].img)
+    dispatcher(fetchItem(itemTitle))
   }, [])
 
-  const move = {
-    marginLeft: pos,
-  }
+  let [count, setCount] = React.useState(0)
+  let [selecdedSize, setSelectedSize] = React.useState(null)
+  let [active, setActive] = React.useState(null)
+
   const onClickNext = () => {
-    setPos(pos - 740)
-    if (pos < -(ArrImg.length - 2) * 740) { setPos(pos = 0) }
+    setCount(++count)
+    if (count >= selecteditem.data.img.length) setCount(0)
   }
 
   const onClickPrev = () => {
-    setPos(pos + 740)
-    if (pos >= 0) { setPos(pos = -(ArrImg.length - 1) * 740) }
+    setCount(--count)
+    if(count < 0) setCount(selecteditem.data.img.length-1)
+  }
+
+  const onSizeClick = (value)=>{
+    setSelectedSize(value)
+    setActive(value)
   }
 
   const onAddToCart = () => {
 
-    axios.get('http://localhost:3001/MyAccount')
-      .then((res) => { return res.data[0].Cart.slice(0) })
-      .then((res) => {
-        setCart(cart = res.concat(
-          {
-            title: BrandItem[0].title,
-            img: BrandItem[0].img,
-            price: BrandItem[0].price,
-            color: BrandItem[0].color,
-            size: BrandItem[0].sizeAviable,
-            url: BrandItem[0].url,
-          }
-        ))
-      }
-      )
-      .then((res) => {
-        axios({
-          method: 'PATCH',
-          url: 'http://localhost:3001/MyAccount/1',
-          data: {
-            Cart: cart
-          }
-        });
-      }
-      )
+    if (isLoggedIn !== 'loggedIn'){dispatcher(error('To add an item to your shopping cart, please register.'))}
+    if (!selecdedSize){dispatcher(error('Please, select size'))}
+    else{
+    dispatcher(addToCart({
+      accountId: id,
+      itemId: selecteditem.data._id,
+      color: selecteditem.data.color,
+      size: selecdedSize
+    }))
+  }
   }
 
-  // axios({
-  //   method: 'PATCH',
-  //   url: 'http://localhost:3001/MyAccount/1',
-  //   data: {
-  //     Cart: cart
-  //   }
-  // })
 
-
-  // axios({
-  //   method: "POST",
-  //   url: 'https://629f5305461f8173e4e6f83a.mockapi.io/Cart',
-  //   data:{
-  //     title: BrandItem[0].title,
-  //     img: BrandItem[0].img,
-  //     price: BrandItem[0].price,
-  //     color: BrandItem[0].color,
-  //     size: BrandItem[0].sizeAviable,
-  //     url: BrandItem[0].url,
-  //   }
-  // })
-  //}
-
-
-  return (
+  if (selecteditem.status !== 'fulfield') { return <Loading /> }
+  else return (
     <div>
-      {BrandItem.map(obj =>
+      {err && <ErrorPage info={err}/>}
+      {[selecteditem.data].map(obj =>
         <div className={styles.carditem_block} key={obj.url}>
           <div className={styles.carditem_img}>
-            <div className={styles.img_block} style={move}>{obj.img.map(url => <img src={url} alt='' key={url}></img>)}</div>
+            <div className={styles.img_block} >
+              <img src={selecteditem.data.img[count]} alt='' key={selecteditem.data.img[count]}></img>
+            </div>
             <div className={styles.btn_next} onClick={onClickNext}><p></p></div>
             <div className={styles.btn_prev} onClick={onClickPrev}><p></p></div>
           </div>
           <div className={styles.carditem_content}>
             <div className={styles.sneaker_title}>{obj.title}</div>
             <div className={styles.sneaker_color}>{obj.color}</div>
-            <div className={styles.sneaker_description}>Size:
-              {obj.sizeAviable.map(value => <li key={value}>{value}</li>)}
+            <div className={styles.sneaker_description}>
+              <p>Size: </p>
+            <div className={styles.size_block}>
+            {obj.sizeavailable.map((value) =>
+              <div className={active === value ? styles.active_size: styles.size} onClick={()=>{onSizeClick(value)}} key={value}>
+                <p>{value}</p>
+              </div>
+            )}
             </div>
-            <div className={styles.sneaker_price}>{obj.price} EUR</div>
-            <div className={styles.btn_Add} onClick={onAddToCart}>Add To Cart</div>
+            </div>
+            <div className={styles.sneaker_price}>{obj.onsale ? ('Price on sale: ' + obj.onsale.salePrice) : obj.price} EUR</div>
+            <button className={styles.btn_Add} onClick={onAddToCart} >Add To Cart</button>
           </div>
         </div>
       )}
     </div>
   )
 }
+
 
 
 export default CardItem

@@ -1,39 +1,46 @@
 import styles from '../styles/HomePage.module.css'
-import TopSaleCard from './TopSaleCard.js'
-import TopSaleSneaker from './TopSaleSneaker.js'
+import Card from './Card';
 import BrandSection from './BrandSection';
+import { Link } from 'react-router-dom';
+import {useSelector} from 'react-redux'
 
-function HomePage(props) {
+function HomePage() {
+
+  const brands = useSelector(state => state.brands.brands)
+  const latest = useSelector(state => state.items.latest.list)
+
   return (
     <div className={styles.home_page}>
       <div className={styles.scroll_page}>
       <div className={styles.menu}>
-        <a href='#'>Men</a>
-        <a href='#'>Woman</a>
-        <a href='#'>Kids</a>
-        <a href='#'>Sale</a>
+        <Link to='/Men'>Men</Link>
+        <Link to='/Women'>Woman</Link>
+        <Link to='/Kids'>Kids</Link>
+        <Link to='/Sale'>Sale</Link>
       </div>
       <div className={styles.run}>
         <img className={styles.run_img} src='/img/Head_image_2.jpg'></img>
       </div>
       <div className={styles.top_sale}>
         {
-          TopSaleSneaker.map((obj) =>
-            <TopSaleCard
+          latest.map((obj) =>
+            <Card
               key = {obj.title}
               title={obj.title}
-              color={obj.color}
               price={obj.price}
-              imgURL={obj.imgURL[0]}
+              url={obj.url}
+              onsale={obj.onsale}
+              color={obj.color}
+              bgImage={obj.img[0]}
             />)
         }
       </div>
       <div className={styles.top_brands}>
-        {props.items.map((obj) =>
+        {brands.map((obj) =>
           <BrandSection
             key = {obj.url}
             logo={obj.logo}
-            logoSize={obj.logoSize}
+            logoSize={obj.logosize}
             bgImage={obj.backgroundImg}
             url={obj.url}
           />)}
